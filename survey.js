@@ -1,16 +1,3 @@
-// const ac = new AbortController();
-// const signal = ac.signal;
-
-// rl.question('What is your favorite food? ', { signal }, (answer) => {
-//   console.log(`Oh, so your favorite food is ${answer}`);
-// });
-
-// signal.addEventListener('abort', () => {
-//   console.log('The food question timed out');
-// }, { once: true });
-
-// setTimeout(() => ac.abort(), 10000);
-
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -18,26 +5,33 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('Hello! My name is', (answer) => {
+rl.question('Hello! My name is', (name) => {
   // TODO: Log the answer in a database
-  rl.question('In my spare time you can find me ', (answer) => {
+  rl.question('In my spare time you can find me ', (hobby) => {
     // TODO: Log the answer in a database
-    rl.question('Otherwise I\'ll probably be ', (answer) => {
+    rl.question('Otherwise I\'ll probably be ', (hobby2) => {
       // TODO: Log the answer in a database
-      rl.question('I enjoy spending time with ', (answer) => {
+      rl.question('I enjoy spending time with ', (bestCompany) => {
         // TODO: Log the answer in a database
-        rl.question('Those closest to me would say my best quality is my ', (answer) => {
+        rl.question('Those closest to me would say my best quality is my ', (quality) => {
           // TODO: Log the answer in a database
-          rl.question('My pet peeves are ', (answer) => {
+          rl.question('My pet peeves are ', (petPeeves) => {
             // TODO: Log the answer in a database
-            rl.question('I can\'t live without ', (answer) => {
+            rl.question('I can\'t live without ', (mustHave) => {
               // TODO: Log the answer in a database
-            
-            rl.close();
-            })
-          })
-        })
-      })
-    })
-  })
+              console.log(`Hello! My name is ${name}`);
+              console.log(`In my spare time you can find me ${hobby}`);
+              console.log(`Otherwise I'll probably be ${hobby2}`);
+              console.log(`I enjoy spending time with ${bestCompany}`);
+              console.log(`Those closest to me would say my best quality is my ${quality}`);
+              console.log(`My pet peeves are ${petPeeves}`);
+              console.log(`I can't live without ${mustHave}`);
+
+              rl.close();
+            });
+          });
+        });
+      });
+    });
+  });
 });
